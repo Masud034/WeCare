@@ -18,7 +18,7 @@ class LogOutController extends Controller
     	} else {
 			return redirect('/login')
     					->with('alert-title', 'You are not logged in!')
-    					->with('alert-message', 'Log in first!');    		
+    					->with('alert-message', 'Log in first!');
     	}
     }
 }

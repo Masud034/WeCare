@@ -67,8 +67,8 @@ class RegisterController extends Controller
         // header("Location: http://localhost:8000/login");
 
         return redirect('/login')
-                    ->with('alert-title', 'Registration Successful!')
-                    ->with('alert-message', "Try login now.");
+                    ->with('alert-title', 'Success!')
+                    ->with('alert-message', "Congratulations! Your registration was successfuly. Try login now.");
 
     }
     

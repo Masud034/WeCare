@@ -13,6 +13,14 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::get('/about', 'AboutController@index');
+
+Route::get('/services', 'ServicesController@index');
+
+Route::get('/terms', 'TermsController@index');
+
+Route::get('/privacy', 'PrivacyController@index');
+
 Route::get('/login', 'LoginController@login');
 
 Route::post('/login', 'LoginController@check');
