@@ -1,0 +1,267 @@
+.invalid-feedback {
+        display: block;
+      }
+      *,
+      *::after,
+      *::before{
+          margin: 0;
+          box-sizing: border-box;
+      }
+      html,
+      body {
+          font-family: 'Lato', 'Arial', sans-serif;
+          font-size: 16px;
+          text-rendering: optimizeLegibility;
+          overflow-x: hidden;
+      }
+      .container {
+        padding: 20px;
+      }
+      .navbar {
+          background-color: rgba(0,0,0,0.9) !important;
+      }
+      .navbar .nav-link {
+      font-size: 14px;
+      text-transform: uppercase;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+      }
+      .nav-item a {
+          font-size: 120%;
+          text-transform: uppercase;
+          font-weight: 700;
+          display: inline-block;
+          background-image: linear-gradient(to right, #7ed56f, #28b485) !important;
+          -webkit-background-clip: text !important;
+          color: transparent !important;
+          letter-spacing: .2rem;
+          transition: all .2s;
+          vertical-align: top;
+          box-orient: vertical; }
+      .nav-item a:hover {
+          transform: scale(1.1);
+           }
+      .navbar .nav-item.active {
+        border-left: #444 3px solid;
+      }
+      .navbar-brand {
+          display: inline-block;
+          color: #7ed56f;
+          font-size: 140%;
+          font-weight: 700;
+          background-image: linear-gradient(to right, #7ed56f, #28b485) !important;
+          -webkit-background-clip: text !important;
+          color: transparent !important;
+      }
+      .navbar-brand img {
+          height: 50px;
+      }
+      .carousel-item {
+          height: 600px;
+      }
+      .carousel-image-1 {
+          background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/picture1.jpg');
+          background-size: cover;
+          background-position: bottom;
+          background-attachment: fixed;
+      }
+      .carousel-image-2 {
+          background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/picture2.jpg');
+          background-size: cover;
+          background-position: top;
+          background-attachment: fixed;
+      }
+      .carousel-image-3 {
+          background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/picture3.jpg');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+      }
+      .carousel-caption h1{
+          display: inline-block;
+          background-image: linear-gradient(to right, #7ed56f, #28b485);
+          -webkit-background-clip: text;
+          color: transparent;
+      }
+      .carousel-caption p{
+          font-size: 120%;
+          color: #EEEEEE;
+      }
+      .carousel-caption .btn-success{
+          margin-right: 15px;
+      }
+      .carousel-caption .btn-primary{
+          margin-right: 15px;
+      }
+      footer {
+          color: #fff;
+          background-attachment: fixed;
+          background-color:#222;
+      }
+      footer p {
+          color: #ccc;
+      }
+      footer a {
+          color: #ccc;
+      }
+      .social-pet li {
+          display: inline-block;
+          margin-right: 10px;
+      }
+      .social-pet li a {
+          height: 35px;
+          width: 35px;
+          border-radius: 50%;
+          text-align: center;
+          display: block;
+          line-height: 35px;
+          background-color: #3a5a95;
+          color: #fff;
+      }
+      .social-pet li:nth-child(2) a {
+          background-color: #57aced;
+      }
+      .social-pet li:nth-child(3) a {
+          background-color: #dd4f43;
+      }
+      .social-pet li:nth-child(4) a {
+          background-color: #6b27b2;
+      }
+      .social-pet li a:hover {
+          background-color: #0141a2;
+      }
+      .social-pet li a:hover i {
+          transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
+          -webkit-transform: rotate(360deg);
+      }
+      #contact h5 {
+          background-image: linear-gradient(to right, #7ed56f, #28b485) !important;
+          -webkit-background-clip: text !important;
+          color: transparent !important;
+      }
+      .footer-logo img {
+          height: 120px;
+      }
+      .footer-logo a {
+          background-image: linear-gradient(to right, #7ed56f, #28b485) !important;
+          -webkit-background-clip: text !important;
+          color: transparent !important;
+          margin-left: 7px;
+      }
+      .copyright {
+          margin-top: 20px;
+          background-image: linear-gradient(to right, #7ed56f, #28b485) !important;
+          -webkit-background-clip: text !important;
+          color: transparent !important;
+      }
+      .menu-list li {
+          display: block;
+          color: #ccc;
+          margin-bottom: 15px;
+          list-style: none;
+          text-decoration: none;
+          padding: 1px;
+      }
+      .menu-list a {
+          text-decoration: none;
+          transition: all .2s;
+      }
+      .col-10 h6 {
+          background-image: linear-gradient(to right, #7ed56f, #28b485);
+          -webkit-background-clip: text;
+          color: transparent;
+      }
+      .menu-list a:hover,
+      .menu-list a:active {
+          text-decoration: none;
+          background-image: linear-gradient(to right, #7ed56f, #28b485);
+          -webkit-background-clip: text;
+          color: transparent;
+      }
+      .ig input {
+          padding: 22px;
+      }
+      footer .input-group-addon {
+          background-color: #0141a2;
+          padding: 10px;
+      }
+      .f-address li {
+          display: inline-block;
+      }
+      .f-address li i {
+          color: #2995de;
+          font-size: 18px;
+      }
+      .f-address li a {
+          color: #ccc;
+      }
+      #elderly-header {
+          background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/picture1.jpg');
+          background-size: cover;
+          background-attachment: fixed;
+          background-position: bottom;
+          height: 450px;
+          color: #fff;
+          border-bottom: 1px #eee solid;
+          padding-top: 50px;
+      }
+      #child-header {
+          background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/picture2.jpg');
+          background-size: cover;
+          background-attachment: fixed;
+          background-position: top;
+          height: 450px;
+          color: #fff;
+          border-bottom: 1px #eee solid;
+          padding-top: 50px;
+      }
+      #pets-header {
+          background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/picture3.jpg');
+          background-size: cover;
+          background-attachment: fixed;
+          background-position: center;
+          height: 450px;
+          color: #fff;
+          border-bottom: 1px #eee solid;
+          padding-top: 50px;
+      }
+      .about-img {
+          margin-top: -50px;
+      }
+      .mt-10 {
+          margin-top: 100px;
+       }
+        .mt-20 {
+            margin-top: 300px;
+            display: inline-block;
+            background-image: linear-gradient(to right, #7ed56f, #28b485);
+            -webkit-background-clip: text;
+            color: transparent;
+            transition: all .2s;
+            text-transform: uppercase;
+        }
+      .mt-20:hover {
+          transform: skew(-5deg) scale(1.1);
+          font-weight: 1000;
+      }
+      .blockquote-footer {
+          background-color: transparent;
+          margin-top: 15px;
+      }
+      #testimonials h2 {
+          padding: 20px;
+          background-image: linear-gradient(to right, #7ed56f, #28b485);
+          -webkit-background-clip: text;
+          color: transparent;
+          text-align: center;
+      }
+        .tac {
+            margin-top: 100px;
+        }
+        .tac h1,
+        .tac h2 {
+            background-image: linear-gradient(to right, #7ed56f, #28b485);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
