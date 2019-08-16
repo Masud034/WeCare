@@ -30,3 +30,13 @@ Route::get('/register','RegisterController@register');
 Route::post('/register','RegisterController@recieved');
 
 Route::get('/logout', 'LogOutController@logout');
+
+Route::get('/profile','ProfileController@view');
+
+Route::get('/profile/edit', 'ProfileController@edit');
+
+Route::post('/profile/edit', 'ProfileController@update');
+
+Route::get('/service', 'ServiceController@addServiceForm');
+
+Route::post('/service', 'ServiceController@store');
