@@ -38,10 +38,17 @@ class ProfileController extends Controller
     		'email' => 'required|unique:users,email,' . auth()->user()->id
     	]);
 
-    	$photoPath = null;
+    	//$photoPath = null;
+    
 
     	if ($request->hasFile('photo')) {
     		$photoPath = $request->photo->store('images/profile', 'public');
+    	}
+    	else if(auth()->user()->photo != null ){
+    		$photoPath=auth()->user()->photo;
+    	}
+    	else{
+    		$photoPath=null;
     	}
 
     	\DB::update('update users set 
