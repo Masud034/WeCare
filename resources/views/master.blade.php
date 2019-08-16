@@ -35,6 +35,9 @@
           text-rendering: optimizeLegibility;
           overflow-x: hidden;
       }
+      .container {
+        padding: 20px;
+      }
       .navbar {
           background-color: rgba(0,0,0,0.9) !important;
       }
@@ -313,9 +316,6 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url('/logout') }}">Logout</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('/logout') }}">Logout</a>
-            </li>
             @else
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('/login') }}">Login</a>
@@ -326,17 +326,33 @@
           @endif
         </ul>
           @if( auth()->check() )
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Looking for ..." aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-              @endif
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Looking for ..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          @endif
       </div>
     </nav>
+    <div style="margin-top: 76px;">
+      @if( session('alert-title') )
+      <div style="margin-top: 10px">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <h4 class="alert-heading">{{ session('alert-title') }}</h4>
+              <p>{{ session('alert-message') }}</p>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      @endif  
 
-    @if( !( auth()->check() ))
-    @yield('content')
-    @endif
+      @yield('content')
+    </div>
+
     <footer class="pt-4" id="contact">
         <div class="container">
             <div class="row">

@@ -1,4 +1,6 @@
 @extends('master')
 @section('content')
-    <h1 style="padding: 200px 80px">Services</h1>
+    <div class="container">
+    	<h1>Services</h1>
+    </div>
 @endsection

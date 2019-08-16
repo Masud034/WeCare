@@ -2,7 +2,8 @@
 
 @section('content')
 
- <div class ="row">
+ <div class="container">
+   <div class ="row">
     <div class="offset-md-3 col-lg-6">
          <div class="card">
            <div class="card-header">Login</div>
@@ -33,6 +34,7 @@
            </div>
          </div> 
     </div>
+ </div>
  </div>
   
 
