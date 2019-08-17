@@ -62,8 +62,31 @@
 						+ Add Service
 					</a>
 				</div>
+
 				<div class="card-body">
-					...
+					<table class="table">
+						<thead>
+							<tr>
+								
+								<th scope="col">Service Title</th>
+								<th scope="col">Offerings</th>
+								<th scope="col">Photo</th>
+							</tr>
+						</thead>
+						<tbody>
+
+						  @foreach($serviceDetails as $sd)
+							<tr>
+								<td>{{ $sd->title }}</td>
+								<td>{{ $sd->offerings }}</td>
+								<td>
+									<img src="{{ asset(Storage::url($sd->photo)) }}" onerror="this.src='https://placehold.it/200x200'" style="width: 200px;" alt="Photo" class="img-thumbnail">
+								</td>
+							</tr>
+					
+							@endforeach
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>			

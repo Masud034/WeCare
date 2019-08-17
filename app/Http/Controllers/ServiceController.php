@@ -13,6 +13,7 @@ class ServiceController extends Controller
     	return view('service', compact('services'));
     }
 
+
     public function store(Request $request)
     {
     	$this->validate($request,[
