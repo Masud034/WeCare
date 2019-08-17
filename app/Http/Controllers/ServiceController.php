@@ -45,5 +45,6 @@ class ServiceController extends Controller
     	return redirect('/profile')
                             ->with('alert-title', 'successful!')
                             ->with('alert-message', 'Your service offerings has been saved.');
-    }
+    }    
+
 }

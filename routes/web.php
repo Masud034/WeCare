@@ -40,3 +40,5 @@ Route::post('/profile/edit', 'ProfileController@update');
 Route::get('/service', 'ServiceController@addServiceForm');
 
 Route::post('/service', 'ServiceController@store');
+
+Route::get('/service-details/{user_id}/{service_id}', 'ServicesController@details');

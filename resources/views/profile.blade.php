@@ -68,9 +68,9 @@
 						<thead>
 							<tr>
 								
-								<th scope="col">Service Title</th>
-								<th scope="col">Offerings</th>
-								<th scope="col">Photo</th>
+								<th scope width="25%" ="col">Service Title</th>
+								<th scope width="25%" ="col">Offerings</th>
+								<th scope width="50%" ="col">Photo</th>
 							</tr>
 						</thead>
 						<tbody>

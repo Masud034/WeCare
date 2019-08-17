@@ -35,11 +35,10 @@
             </li>
         @endif
       </ul>
-        @if( auth()->check() )
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Looking for ..." aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        @endif
+      
+      <form method="GET" action="{{ url('services') }}" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" value="{{ @$_REQUEST['search'] }}" name="search" placeholder="Looking for ..." aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
   </nav>
