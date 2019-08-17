@@ -49,9 +49,37 @@
         </div>
     </section>
 
+
+    <section class="py-5" id="steps">
+        <div class="container steps">
+            <div class="row">
+                <div class="col-md-3 mb-4 text-center">
+                    <i class="fas fa-user-plus fa-4x mb-2"></i>
+                    <h3>Register</h3>
+                    <p>Register today and provide care to other registered user or look for a care now.</p>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <i class="fas fa-search-plus fa-4x mb-2"></i>
+                    <h3>Search Care</h3>
+                    <p>Search available service that other user provide and find the care you're looking for.</p>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <i class="fas fa-hand-holding-usd fa-4x mb-2"></i>
+                    <h3>Provide care</h3>
+                    <p>Find a care that you are capable to provide to the other registered users.</p>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <i class="fas fa-money-check-alt fa-4x mb-2"></i>
+                    <h3>Earn Money</h3>
+                    <p>You can eary handy money by providing care regardless of age, profession or experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="testimonials" class="p-4 bg-dark text-white">
         <div class="container">
-            <h2 class="text-center">Testimonials</h2>
+            <h1 class="text-center">Testimonials</h1>
             <div class="row text-center">
                 <div class="col">
                     <div class="slider">
@@ -83,6 +111,58 @@
                             </blockquote>
                         </div>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light text-center p-5">
+        <div class="container-fluid cfluid">
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <div class="card card-1 text-light py-4 my-4 mx-auto">
+                        <div class="card-body">
+                            <h5 class="text-uppercase font-weight-bold mb-3">SERVICE TYPE ONE</h5>
+                            <h3 class="display-4">Elderly Care Options</h3>
+                            <ul class="list-unstyled">
+                                <li class="font-weight-bold py-3 card-list-item">Nursing care</li>
+                                <li class="font-weight-bold py-3 card-list-item">Home care for a day</li>
+                                <li class="font-weight-bold py-3 card-list-item">Foster care for a day</li>
+                                <li class="font-weight-bold py-3 card-list-item border-0">Resident contract care</li>
+                            </ul>
+                            <a href="{{ url('/register') }}" class="btn p-2 text-uppercase font-weight-bold price-card-button text-light">sign-up</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card card-2 text-light py-4 my-4 mx-auto">
+                        <div class="card-body">
+                            <h5 class="text-uppercase font-weight-bold mb-3">SERVICE TYPE TWO</h5>
+                            <h3 class="display-4">Child Care Options</h3>
+                            <ul class="list-unstyled">
+                                <li class="font-weight-bold py-3 card-list-item">Babysit care</li>
+                                <li class="font-weight-bold py-3 card-list-item">Home care for a day</li>
+                                <li class="font-weight-bold py-3 card-list-item">Foster care for a day</li>
+                                <li class="font-weight-bold py-3 card-list-item ">Resident contract care</li>
+                            </ul>
+                            <a href="{{ url('/register') }}" class="btn p-2 text-uppercase font-weight-bold price-card-button text-light">sign-up</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card card-3 text-light py-4 my-4 mx-auto">
+                        <div class="card-body">
+                            <h5 class="text-uppercase font-weight-bold mb-3">SERVICE TYPE THREE</h5>
+                            <h3 class="display-4">Pets Care Options</h3>
+                            <ul class="list-unstyled">
+                                <li class="font-weight-bold py-3 card-list-item">Transport service</li>
+                                <li class="font-weight-bold py-3 card-list-item">Home care for a day</li>
+                                <li class="font-weight-bold py-3 card-list-item">Foster care for a day</li>
+                                <li class="font-weight-bold py-3 card-list-item border-0">Resident contract care</li>
+                            </ul>
+                            <a href="{{ url('/register') }}" class="btn p-2 text-uppercase font-weight-bold price-card-button text-light">sign-up</a>
+                        </div>
                     </div>
                 </div>
             </div>

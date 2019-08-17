@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mt-20">
-                    <h1 id="elderly">Elderly Care</h1>
+                    <h1>Elderly Care</h1>
                 </div>
             </div>
         </div>
@@ -12,7 +12,7 @@
 
     <!--ABOUT-->
 
-    <section id="about" class="py-3">
+    <section class="py-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mt-10">
@@ -37,7 +37,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mt-20">
-                    <h1 id="child">Child Care</h1>
+                    <h1>Child Care</h1>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
 
     <!--ABOUT-->
 
-    <section id="about" class="py-3">
+    <section class="py-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mt-10">
@@ -70,7 +70,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mt-20">
-                    <h1 id="pets">Pets Care</h1>
+                    <h1>Pets Care</h1>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
 
     <!--ABOUT-->
 
-    <section id="about" class="py-3">
+    <section class="py-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mt-10">

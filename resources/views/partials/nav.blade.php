@@ -16,9 +16,6 @@
           <li class="nav-item">
               <a class="nav-link" href="{{ url('/services') }}">Services <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">How It Works <span class="sr-only">(current)</span></a>
-          </li>
         @if( auth()->check() )
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/logout') }}">Logout</a>
