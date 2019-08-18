@@ -21,24 +21,30 @@ Route::get('/terms', 'TermsController@index');
 
 Route::get('/privacy', 'PrivacyController@index');
 
-Route::get('/login', 'LoginController@login');
+Route::get('/login', 'LoginController@login')->middleware('guest')->name('login');
 
-Route::post('/login', 'LoginController@check');
+Route::post('/login', 'LoginController@check')->middleware('guest');
 
-Route::get('/register','RegisterController@register');
+Route::get('/register','RegisterController@register')->middleware('guest');
 
-Route::post('/register','RegisterController@recieved');
+Route::post('/register','RegisterController@recieved')->middleware('guest');
 
-Route::get('/logout', 'LogOutController@logout');
+Route::get('/logout', 'LogOutController@logout')->middleware('auth');
 
-Route::get('/profile','ProfileController@view');
+Route::get('/profile','ProfileController@view')->middleware('auth');
 
-Route::get('/profile/edit', 'ProfileController@edit');
+Route::get('/profile/edit', 'ProfileController@edit')->middleware('auth');
 
-Route::post('/profile/edit', 'ProfileController@update');
+Route::post('/profile/edit', 'ProfileController@update')->middleware('auth');
 
-Route::get('/service', 'ServiceController@addServiceForm');
+Route::get('/service', 'ServiceController@addServiceForm')->middleware('auth');
 
-Route::post('/service', 'ServiceController@store');
+Route::post('/service', 'ServiceController@store')->middleware('auth');
 
 Route::get('/service-details/{user_id}/{service_id}', 'ServicesController@details');
+
+Route::get('/booking', 'BookingController@show')->middleware('auth');
+
+Route::post('/booking', 'BookingController@store')->middleware('auth');
+
+Route::post('/payment-gateway-resposne', 'BookingController@paymentGatewayResponse');

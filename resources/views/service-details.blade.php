@@ -13,13 +13,30 @@
 							<td>{{ $serviceDetails->title }}</td>
 						</tr>
 						<tr>
-							<th>Payment Method</th>
-							<td>Cash</td>
+							<th>Rate</th>
+							<td>BDT {{ $serviceDetails->payment }} / Day</td>
 						</tr>
 						<tr>
 							<td colspan="2">
 								<p><u><strong>Offerings</strong></u></p>
 								<p>{{ $serviceDetails->offerings }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="bg-warning text-center">
+								<form class="form-inline" method="POST" action="{{ url('booking') }}">
+								  {{ csrf_field() }}
+
+								  <input type="hidden" name="service_id" value="{{ $serviceDetails->service_id }}">
+
+								  <input type="hidden" name="user_id" value="{{ $serviceDetails->user_id }}">
+
+								  <div class="form-group mx-sm-3 mb-2">
+								    <label>Number of Days: </label>
+								    <input type="number" name="number_of_days" min="1" value="1">
+								  </div>
+								  <button type="submit" class="btn btn-primary mb-2">Confirm Booking</button>
+								</form>
 							</td>
 						</tr>
 					</table>			

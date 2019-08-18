@@ -17,7 +17,7 @@
               <a class="nav-link" href="{{ url('/services') }}">Services <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">How It Works <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ url('booking') }}">Bookings <span class="sr-only">(current)</span></a>
           </li>
         @if( auth()->check() )
           <li class="nav-item">
