@@ -3,7 +3,7 @@
 @section('content')
 
 
- <section class="signup">
+ <section class="login">
      <div class="container cc">
          <div class="signup-content">
              <form method="POST" action="{{ url('/login') }}">

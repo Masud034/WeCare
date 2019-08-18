@@ -1,6 +1,7 @@
 @extends('master')
 
 @section('content')
+    @if( !(auth()->check()) )
     <section id="showcase">
         <div id="myCarousel" class="carousel slide" date-ride="carousel">
             <ol class="carousel-indicators">
@@ -77,14 +78,14 @@
         </div>
     </section>
 
-    <section id="testimonials" class="p-4 bg-dark text-white">
+    <section id="testimonials" class="p-4 bg-custom-b text-white">
         <div class="container">
             <h1 class="text-center">Testimonials</h1>
             <div class="row text-center">
                 <div class="col">
                     <div class="slider">
                         <div>
-                            <blockquote class="blockguote">
+                            <blockquote class="blockp">
                                 <p class="mb-0">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet deleniti dolore ea enim eos est nemo optio pariatur perspiciatis sapiente, ullam veritatis! Exercitationem, expedita repellendus? Ab animi dicta incidunt maxime necessitatibus officia quae rerum sunt.
                                 </p>
@@ -93,7 +94,7 @@
                             </blockquote>
                         </div>
                         <div>
-                            <blockquote class="blockguote">
+                            <blockquote class="blockp">
                                 <p class="mb-0">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque debitis deleniti explicabo fugiat, nam quo reiciendis saepe totam voluptatibus! Animi aperiam autem dignissimos error eum, illo iure, nesciunt officiis placeat quidem rem repudiandae, voluptatum.
                                 </p>
@@ -102,7 +103,7 @@
                             </blockquote>
                         </div>
                         <div>
-                            <blockquote class="blockguote">
+                            <blockquote class="blockp">
                                 <p class="mb-0">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at deleniti dicta dolores ducimus, ex, explicabo illo incidunt ipsam magnam modi molestiae natus nemo nesciunt nisi porro qui quidem quisquam rerum sed tempora tempore veritatis!
                                 </p>
@@ -123,8 +124,7 @@
                 <div class="col-lg-4">
                     <div class="card card-1 text-light py-4 my-4 mx-auto">
                         <div class="card-body">
-                            <h5 class="text-uppercase font-weight-bold mb-3">SERVICE TYPE ONE</h5>
-                            <h3 class="display-4">Elderly Care Options</h3>
+                            <h3 class="display-5 text-uppercase">Elderly Care Options</h3>
                             <ul class="list-unstyled">
                                 <li class="font-weight-bold py-3 card-list-item">Nursing care</li>
                                 <li class="font-weight-bold py-3 card-list-item">Home care for a day</li>
@@ -138,8 +138,7 @@
                 <div class="col-lg-4">
                     <div class="card card-2 text-light py-4 my-4 mx-auto">
                         <div class="card-body">
-                            <h5 class="text-uppercase font-weight-bold mb-3">SERVICE TYPE TWO</h5>
-                            <h3 class="display-4">Child Care Options</h3>
+                            <h3 class="display-5 text-uppercase">Child Care Options</h3>
                             <ul class="list-unstyled">
                                 <li class="font-weight-bold py-3 card-list-item">Babysit care</li>
                                 <li class="font-weight-bold py-3 card-list-item">Home care for a day</li>
@@ -153,8 +152,7 @@
                 <div class="col-lg-4">
                     <div class="card card-3 text-light py-4 my-4 mx-auto">
                         <div class="card-body">
-                            <h5 class="text-uppercase font-weight-bold mb-3">SERVICE TYPE THREE</h5>
-                            <h3 class="display-4">Pets Care Options</h3>
+                            <h3 class="display-5 text-uppercase">Pets Care Options</h3>
                             <ul class="list-unstyled">
                                 <li class="font-weight-bold py-3 card-list-item">Transport service</li>
                                 <li class="font-weight-bold py-3 card-list-item">Home care for a day</li>
@@ -169,41 +167,120 @@
         </div>
     </section>
 
-@endsection
-
-@section('content-home')
-
-    <section class="dash">
-        <div class="container-fluid">
+    <section id="faq" class="p-5 bg-custom text-white">
+        <div class="container">
+            <h1 class="text-center faq-h">Frequently Asked Question</h1>
             <div class="row">
-                <!-- sidebar -->
-                <div class="col-xl-2 col-lg-3 col-md-4 sidebar">
+                <div class="col-md-6 mb-5">
+                    <div class="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne">
+                                        What is WeCare?
+                                    </button>
+                                </h2>
+                            </div>
 
-                    <div class="bottom-border pb-3">
-                        <img src="images/admin.jpeg" width="50" class="rounded-circle mr-3">
-                        <a href="#" class="text-white">Helen Smith</a>
+                            <div id="collapseOne" class="collapse">
+                                <div class="card-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate dicta itaque perferendis quis rem sit. Architecto cupiditate iure laboriosam odio voluptate? Asperiores at autem consequatur eius eveniet, ut? Dicta ducimus est fugiat magnam officia qui ratione reiciendis ullam voluptas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo">
+                                        What type of service we provide?
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseTwo" class="collapse">
+                                <div class="card-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate dicta itaque perferendis quis rem sit. Architecto cupiditate iure laboriosam odio voluptate? Asperiores at autem consequatur eius eveniet, ut? Dicta ducimus est fugiat magnam officia qui ratione reiciendis ullam voluptas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree">
+                                        What are the payment methods?
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseThree" class="collapse">
+                                <div class="card-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate dicta itaque perferendis quis rem sit. Architecto cupiditate iure laboriosam odio voluptate? Asperiores at autem consequatur eius eveniet, ut? Dicta ducimus est fugiat magnam officia qui ratione reiciendis ullam voluptas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="navbar-nav flex-column mt-4">
-                        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-user text-light fa-lg mr-3"></i>Profile</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-envelope text-light fa-lg mr-3"></i>Inbox</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Sales</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-chart-line text-light fa-lg mr-3"></i>Analytics</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-chart-bar text-light fa-lg mr-3"></i>Charts</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-table text-light fa-lg mr-3"></i>Tables</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-wrench text-light fa-lg mr-3"></i>Settings</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-file-alt text-light fa-lg mr-3"></i>Documentation</a></li>
-                    </ul>
                 </div>
-                <!-- end of sidebar -->
+                <div class="col-md-6 mb-5">
+                    <div class="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour">
+                                        How to report an account?
+                                    </button>
+                                </h2>
+                            </div>
 
-                <!-- top-nav -->
-                <div class="col-lg-9">
-
+                            <div id="collapseFour" class="collapse">
+                                <div class="card-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate dicta itaque perferendis quis rem sit. Architecto cupiditate iure laboriosam odio voluptate? Asperiores at autem consequatur eius eveniet, ut? Dicta ducimus est fugiat magnam officia qui ratione reiciendis ullam voluptas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive">
+                                        Why do you charge service fee?
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseFive" class="collapse">
+                                <div class="card-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate dicta itaque perferendis quis rem sit. Architecto cupiditate iure laboriosam odio voluptate? Asperiores at autem consequatur eius eveniet, ut? Dicta ducimus est fugiat magnam officia qui ratione reiciendis ullam voluptas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix">
+                                        Can user take and provide care with one account?
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseSix" class="collapse">
+                                <div class="card-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate dicta itaque perferendis quis rem sit. Architecto cupiditate iure laboriosam odio voluptate? Asperiores at autem consequatur eius eveniet, ut? Dicta ducimus est fugiat magnam officia qui ratione reiciendis ullam voluptas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- end of top-nav -->
             </div>
         </div>
     </section>
+    @else
+    @endif
 
 @endsection

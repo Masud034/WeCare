@@ -58,7 +58,7 @@
           height: 50px;
       }
       .carousel-item {
-          height: 600px;
+          height: 550px;
       }
       .carousel-image-1 {
           background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/picture1.jpg');
@@ -208,9 +208,7 @@
       #elderly-header {
           background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/picture1.jpg');
           background-size: cover;
-          background-attachment: fixed;
-          transform:translatez(0);
-          background-position: bottom;
+          background-position: center;
           height: 450px;
           color: #fff;
           border-bottom: 1px #eee solid;
@@ -219,8 +217,6 @@
       #child-header {
           background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/picture2.jpg');
           background-size: cover;
-          background-attachment: fixed;
-          transform:translatez(0);
           background-position: top;
           height: 450px;
           color: #fff;
@@ -230,8 +226,6 @@
       #pets-header {
           background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/picture3.jpg');
           background-size: cover;
-          background-attachment: fixed;
-          transform:translatez(0);
           background-position: center;
           height: 450px;
           color: #fff;
@@ -239,14 +233,13 @@
           padding-top: 50px;
       }
         #page-header {
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/service.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/dhakablue.jpg');
             background-size: cover;
             background-attachment: fixed;
             transform:translatez(0);
             background-position: center;
             height: 300px;
             color: #fff;
-            border-bottom: 1px #eee solid;
             padding-top: 50px;
         }
       .about-img {
@@ -286,6 +279,20 @@
         #testimonials h1:hover {
             transform: skew(-5deg) scale(1.2);
         }
+        .bg-custom {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/dhaka.jpg');
+            background-size: cover;
+            background-position: bottom;
+            background-attachment: fixed;
+            transform:translatez(0);
+        }
+        .bg-custom-b{
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/dhakablue.jpg');
+            background-size: cover;
+            background-position: bottom;
+            background-attachment: fixed;
+            transform:translatez(0);
+        }
       .slider {
           padding-bottom: 50px;
       }
@@ -300,15 +307,17 @@
         }
         #steps {
             padding: 100px;
-            background-color: #EEEEEE;
+
         }
         .steps {
             padding: 100px;
+            background-color: #EEEEEE;
         }
         .steps h3 {
             background-image: linear-gradient(to right, #7ed56f, #28b485);
             -webkit-background-clip: text;
             color: transparent;
+            margin-bottom: 35px;
         }
         .steps i {
             background-image: linear-gradient(to right, #7ed56f, #28b485);
@@ -334,7 +343,7 @@
             transform: skew(-5deg) scale(1.2);
         }
         #faq .card {
-            border: #444;
+            background-color: transparent;
         }
         #faq button {
             color: #acacac;
@@ -346,7 +355,12 @@
         }
         #faq .card-body,
         #faq .card-header {
-            background: #333;
+            background-image: linear-gradient(to right, #7ed56f, #28b485);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .card-header h1 {
+            background-color: #777777;
         }
         #page-header h1 {
             background-image: linear-gradient(to right, #7ed56f, #28b485);
@@ -367,7 +381,7 @@
             background-color: #2f3542;
         }
     .card-1, .card-2, .card-3 {
-        background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../img/service.jpg');
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/service.jpg');
         background-size: cover;
         background-attachment: fixed;
         transform:translatez(0);
@@ -401,7 +415,8 @@
         color: transparent;
     }
     .list-unstyled li {
-        color: #acacac;
+        color: #eeeeee;
+        font-weight: 100;
     }
     .cfluid {
         padding: 50px;
@@ -611,4 +626,49 @@
 
     .alart-bottom {
         margin-bottom: 0px;
+    }
+
+    .blockp {
+        padding-left: 100px;
+        padding-right: 100px;
+        font-size: 120%;
+    }
+
+    .login {
+        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/dhakablue.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        transform:translatez(0);
+        background-position: bottom;
+    }
+    .signup {
+        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/dhaka.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        transform:translatez(0);
+        background-position: center;
+    }
+
+    .search-input {
+        width: 50%;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        color: #EEEEEE;
+        border-bottom: 2px solid #999;
+        transition: all .4s;
+    }
+
+    .search-input:focus {
+        background: #333333;
+        box-shadow: none;
+        border-bottom: 2px solid #7ed56f;
+        color: #EEEEEE;
+    }
+    .servicebg {
+        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/dhaka.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        transform:translatez(0);
+        background-position: center;
     }

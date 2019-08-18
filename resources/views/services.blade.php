@@ -1,6 +1,5 @@
 @extends('master')
 @section('content')
-<<<<<<< HEAD
 
     <header id="page-header">
         <div class="container">
@@ -13,204 +12,38 @@
         </div>
     </header>
 
-    <!--SERVICES-->
-
-    <section class="bg-light text-center p-5">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-lg-4">
-                    <div class="card card-1 text-light py-4 my-4 mx-auto">
-                        <div class="card-body">
-                            <h5 class="text-uppercase font-weight-bold mb-3">SERVICE TYPE ONE</h5>
-                            <h3 class="display-4">Elderly Care Options</h3>
-                            <ul class="list-unstyled">
-                                <li class="font-weight-bold py-3 card-list-item">Nursing care</li>
-                                <li class="font-weight-bold py-3 card-list-item">Home care for a day</li>
-                                <li class="font-weight-bold py-3 card-list-item">Foster care for a day</li>
-                                <li class="font-weight-bold py-3 card-list-item border-0">Resident contract care</li>
-                            </ul>
-                            <a href="{{ url('/register') }}" class="btn p-2 text-uppercase font-weight-bold price-card-button text-light">sign-up</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card card-2 text-light py-4 my-4 mx-auto">
-                        <div class="card-body">
-                            <h5 class="text-uppercase font-weight-bold mb-3">SERVICE TYPE TWO</h5>
-                            <h3 class="display-4">Child Care Options</h3>
-                            <ul class="list-unstyled">
-                                <li class="font-weight-bold py-3 card-list-item">Babysit care</li>
-                                <li class="font-weight-bold py-3 card-list-item">Home care for a day</li>
-                                <li class="font-weight-bold py-3 card-list-item">Foster care for a day</li>
-                                <li class="font-weight-bold py-3 card-list-item ">Resident contract care</li>
-                            </ul>
-                            <a href="{{ url('/register') }}" class="btn p-2 text-uppercase font-weight-bold price-card-button text-light">sign-up</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card card-3 text-light py-4 my-4 mx-auto">
-                        <div class="card-body">
-                            <h5 class="text-uppercase font-weight-bold mb-3">SERVICE TYPE THREE</h5>
-                            <h3 class="display-4">Pets Care Options</h3>
-                            <ul class="list-unstyled">
-                                <li class="font-weight-bold py-3 card-list-item">Transport service</li>
-                                <li class="font-weight-bold py-3 card-list-item">Home care for a day</li>
-                                <li class="font-weight-bold py-3 card-list-item">Foster care for a day</li>
-                                <li class="font-weight-bold py-3 card-list-item border-0">Resident contract care</li>
-                            </ul>
-                            <a href="{{ url('/register') }}" class="btn p-2 text-uppercase font-weight-bold price-card-button text-light">sign-up</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="p-5 bg-dark text-white">
+    <section class="servicebg">
         <div class="container">
-            <h1 class="text-center faq-h">Frequently Asked Question</h1>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="accordion">
-                        <div class="card">
-                            <div class="card-header">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne">
-                                        What is WeCare?
-                                    </button>
-                                </h2>
-                            </div>
+                @if( count($serviceProviders) > 0)
 
-                            <div id="collapseOne" class="collapse">
+                    @foreach($serviceProviders as $sp)
+                        <div class="col-md-4" style="margin-bottom: 20px;">
+                            <div class="card">
+                                <img src="{{ asset(Storage::url($sp->photo)) }}" class="card-img-top" onerror="this.src='https://placehold.it/200x200'" style="height: 200px;" alt="Photo" class="img-thumbnail">
                                 <div class="card-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate dicta itaque perferendis quis rem sit. Architecto cupiditate iure laboriosam odio voluptate? Asperiores at autem consequatur eius eveniet, ut? Dicta ducimus est fugiat magnam officia qui ratione reiciendis ullam voluptas.
+                                    <h5 class="card-title">Provider: {{ $sp->first_name }}</h5>
+                                    <p class="card-text">{{ $sp->offerings }}</p>
+                                    <p class="card-text">
+                                        <small class="text-muted"><em>Category:</em></small>
+                                        <small class="text-success">{{ $sp->title }}</small>
+                                        <a class="btn btn-primary btn-sm float-right" href="{{ url('service-details', [$sp->user_id, $sp->service_id]) }}">View Details</a>
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo">
-                                        What type of service we provide?
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="collapseTwo" class="collapse">
-                                <div class="card-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate dicta itaque perferendis quis rem sit. Architecto cupiditate iure laboriosam odio voluptate? Asperiores at autem consequatur eius eveniet, ut? Dicta ducimus est fugiat magnam officia qui ratione reiciendis ullam voluptas.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree">
-                                        What are the payment methods?
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="collapseThree" class="collapse">
-                                <div class="card-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate dicta itaque perferendis quis rem sit. Architecto cupiditate iure laboriosam odio voluptate? Asperiores at autem consequatur eius eveniet, ut? Dicta ducimus est fugiat magnam officia qui ratione reiciendis ullam voluptas.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="accordion">
-                        <div class="card">
-                            <div class="card-header">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour">
-                                        How to report an account?
-                                    </button>
-                                </h2>
-                            </div>
+                    @endforeach
 
-                            <div id="collapseFour" class="collapse">
-                                <div class="card-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate dicta itaque perferendis quis rem sit. Architecto cupiditate iure laboriosam odio voluptate? Asperiores at autem consequatur eius eveniet, ut? Dicta ducimus est fugiat magnam officia qui ratione reiciendis ullam voluptas.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive">
-                                        Why do you charge service fee?
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="collapseFive" class="collapse">
-                                <div class="card-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate dicta itaque perferendis quis rem sit. Architecto cupiditate iure laboriosam odio voluptate? Asperiores at autem consequatur eius eveniet, ut? Dicta ducimus est fugiat magnam officia qui ratione reiciendis ullam voluptas.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix">
-                                        Can user take and provide care with one account?
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="collapseSix" class="collapse">
-                                <div class="card-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate dicta itaque perferendis quis rem sit. Architecto cupiditate iure laboriosam odio voluptate? Asperiores at autem consequatur eius eveniet, ut? Dicta ducimus est fugiat magnam officia qui ratione reiciendis ullam voluptas.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                @else
+                    <div class="jumbotron">
+                        <h1 class="display-4">404 Not Found</h1>
+                        <p class="lead">Sorry! We are unable to find anything against your search. You can try something like <strong>Pet Care</strong>, <strong>Elderly Care</strong>, <strong>Child Care</strong> etc.</p>
+                        <hr class="my-4">
+                        <a class="btn btn-primary btn-lg" href="{{ url('/') }}" role="button">Home Page</a>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </section>
-=======
-<div class="container">
-	<div class="row">
-		@if( count($serviceProviders) > 0)
 
-			@foreach($serviceProviders as $sp)
-			<div class="col-md-4" style="margin-bottom: 20px;">
-				<div class="card">
-				<img src="{{ asset(Storage::url($sp->photo)) }}" class="card-img-top" onerror="this.src='https://placehold.it/200x200'" style="height: 200px;" alt="Photo" class="img-thumbnail">
-				<div class="card-body">
-					<h5 class="card-title">Provider: {{ $sp->first_name }}</h5>
-					<p class="card-text">{{ $sp->offerings }}</p>
-					<p class="card-text">
-						<small class="text-muted"><em>Category:</em></small>
-						<small class="text-success">{{ $sp->title }}</small>
-						<a class="btn btn-primary btn-sm float-right" href="{{ url('service-details', [$sp->user_id, $sp->service_id]) }}">View Details</a>
-					</p>					
-				</div>
-			</div>
-			</div>
-			@endforeach
-
-			@else
-				<div class="jumbotron">
-				  <h1 class="display-4">404 Not Found</h1>
-				  <p class="lead">Sorry! We are unable to find anything against your search. You can try something like <strong>Pet Care</strong>, <strong>Elderly Care</strong>, <strong>Child Care</strong> etc.</p>
-				  <hr class="my-4">
-				  <a class="btn btn-primary btn-lg" href="{{ url('/') }}" role="button">Home Page</a>
-				</div>
-		@endif
-	</div>
-</div>
->>>>>>> f167461d2e2de739fd9ed50a52f6f1cac84f92a3
 @endsection

@@ -30,7 +30,11 @@
 
     <div style="margin-top: 76px;">
       @include('partials.alert')
-      @yield('content')
+        @if( auth()->check() )
+            @yield('content')
+        @else
+            @yield('content')
+        @endif
     </div>
 
     @include('partials.footer')
@@ -44,7 +48,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
     <script>
         $('.carousel').carousel({
-            interval: 5000,
+            interval: 3000,
             pause: 'hover'
         })
         $('.slider').slick({
@@ -52,7 +56,7 @@
             slideToShow: 1,
             slideToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 4000,
+            autoplaySpeed: 2000,
         })
 
         $(".toggle-password").click(function() {
