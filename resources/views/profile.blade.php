@@ -4,7 +4,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-5">
 			<div class="card">
 				<div class="card-header">
 					Your Profile
@@ -53,7 +53,7 @@
 			</div>
 		</div>	
 
-		<div class="col-md-6">
+		<div class="col-md-7">
 			<div class="card">
 				<div class="card-header">
 					My Services
@@ -70,6 +70,7 @@
 								
 								<th scope width="25%" ="col">Service Title</th>
 								<th scope width="25%" ="col">Offerings</th>
+								<th scope width="10%" ="col">Payment</th>
 								<th scope width="50%" ="col">Photo</th>
 							</tr>
 						</thead>
@@ -79,6 +80,7 @@
 							<tr>
 								<td>{{ $sd->title }}</td>
 								<td>{{ $sd->offerings }}</td>
+								<td>BDT {{ $sd->payment }} per day</td>
 								<td>
 									<img src="{{ asset(Storage::url($sd->photo)) }}" onerror="this.src='https://placehold.it/200x200'" style="width: 200px;" alt="Photo" class="img-thumbnail">
 								</td>

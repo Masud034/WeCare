@@ -14,7 +14,7 @@ class ProfileController extends Controller
     	$user = $user[0];
 
 
-        $serviceDetails = \DB::select('SELECT s.title,su.offerings,su.photo
+        $serviceDetails = \DB::select('SELECT su.payment,s.title,su.offerings,su.photo
             from service_user as su join services as s
             on su.service_id=s.id where su.user_id = ?', [auth()->user()->id]);
 

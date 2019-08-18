@@ -15,7 +15,7 @@
           <select name="service_id" class="form-control">
             <option value="">Select one</option>
             @foreach($services as $service)
-              <option value="{{ $service->id }}">{{ $service->title }}</option>
+            <option value="{{ $service->id }}">{{ $service->title }}</option>
             @endforeach
           </select> 
           @error('service_id')
@@ -26,7 +26,7 @@
         </div>
         <div class="form-group">
           <label>Service offerings</label>
-          <textarea name="offerings" class="form-control"></textarea> 
+          <textarea name="offerings" class="form-control" placeholder="Enter Your Offerings"></textarea> 
 
           @error('offerings')
           <span class="invalid-feedback" role="alert">
@@ -34,8 +34,16 @@
          </span>
          @enderror
        </div>
-
        <div class="form-group">
+              <label>Payment</label>
+              <input type="number" name ="payment" class="form-control" placeholder="Enter BDT Per Day">
+              @error('payment')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
+            </div>
+      <div class="form-group">
         <label>Photo</label>
         <input type="file" name="photo" class="" />
         @error('photo')
@@ -44,7 +52,6 @@
         </span>
         @enderror
       </div>
-
       <button type="submit" class="btn btn-primary float-right">Submit</button>
     </form>
   </div>
