@@ -37,6 +37,7 @@ class ServicesController extends Controller
 				u.photo as user_photo,
 				s.title,
 				su.offerings,
+				su.payment,
 				su.photo as service_photo,
 				su.user_id, 
 				su.service_id

@@ -27,7 +27,11 @@
             <a class="nav-link" href="{{ url('/') }}">Home</a>
           </li>
           <li class="nav-item">
+<<<<<<< HEAD
              <a class="nav-link" href="{{ url('/services') }}">Services</a>
+=======
+              <a class="nav-link" href="{{ url('booking') }}">Bookings <span class="sr-only">(current)</span></a>
+>>>>>>> b45ccac622175b198bceeb09f5f461063d3d35db
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/profile') }}">Profile</a>

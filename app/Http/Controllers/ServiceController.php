@@ -19,7 +19,8 @@ class ServiceController extends Controller
     	$this->validate($request,[
     		'service_id'=> 'required',
     		'offerings'=>'required',
-    		'photo'=>'required'
+            'payment'=>'required',
+    		'photo'=>'required',
     	]);
 
     	if ($request->hasFile('photo')) {
@@ -31,13 +32,15 @@ class ServiceController extends Controller
                 user_id,
                 offerings,
                 photo,
+                payment,
                 created_at,
-                updated_at) VALUES (?, ?, ?, ?, ?, ?)',
+                updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
             [
                 $request->service_id,
                 auth()->user()->id,
                 $request->offerings,
                 $photoPath,
+                $request->payment,
                 now(),
                 now()
             ]);
