@@ -41,5 +41,13 @@
             </li>
         @endif
       </ul>
+<<<<<<< HEAD
+=======
+      
+      <form method="GET" action="{{ url('services') }}" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" value="{{ @$_REQUEST['search'] }}" name="search" placeholder="Looking for ..." aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+>>>>>>> f167461d2e2de739fd9ed50a52f6f1cac84f92a3
     </div>
   </nav>
