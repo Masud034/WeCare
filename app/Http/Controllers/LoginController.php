@@ -44,7 +44,7 @@ class LoginController extends Controller
         # check login - laravel way
         if ( \Auth::attempt( $request->only('email', 'password') ) ) {
 
-            return redirect('/')
+            return redirect('/profile')
                             ->with('alert-title', 'Welcome back!')
                             ->with('alert-message', 'Your login is successful. Explore now.');
 
