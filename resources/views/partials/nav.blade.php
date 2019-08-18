@@ -7,21 +7,30 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
+        @guest
         <li class="nav-item active">
           <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url('/about') }}">About <span class="sr-only">(current)</span></a>
         </li>
-          <li class="nav-item">
-              <a class="nav-link" href="{{ url('/services') }}">Services <span class="sr-only">(current)</span></a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('/services') }}">Services <span class="sr-only">(current)</span></a>
+        </li>
+        @endguest
         @if( auth()->check() )
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Looking for ..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/profile') }}">Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/logout') }}">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">{{ Auth::user()->first_name }}</a>
           </li>
           @else
             <li class="nav-item">
@@ -32,11 +41,5 @@
             </li>
         @endif
       </ul>
-        @if( auth()->check() )
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Looking for ..." aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        @endif
     </div>
   </nav>

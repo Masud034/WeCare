@@ -11,7 +11,7 @@ class LogOutController extends Controller
     	if ( auth()->check() ) {
     		auth()->logout();
 
-    		return redirect('/login')
+    		return redirect('/')
     					->with('alert-title', 'Logged out!')
     					->with('alert-message', 'See you soon.');
 

@@ -30,7 +30,6 @@
 
     <div style="margin-top: 76px;">
       @include('partials.alert')
-
       @yield('content')
     </div>
 
