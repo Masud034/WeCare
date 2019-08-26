@@ -48,3 +48,5 @@ Route::get('/booking', 'BookingController@show')->middleware('auth');
 Route::post('/booking', 'BookingController@store')->middleware('auth');
 
 Route::post('/payment-gateway-resposne', 'BookingController@paymentGatewayResponse');
+
+Route::get('rate-service/booking/{booking_id}/rating/{rating}', 'BookingController@rate')->middleware('auth');

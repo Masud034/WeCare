@@ -16,7 +16,7 @@ class AddMoreColumnsToBookingsTable extends Migration
         Schema::table('bookings', function (Blueprint $table) {
             $table->date('from_date')->after('number_of_days');
             $table->date('to_date')->after('from_date');
-            $table->smallInteger('rating')->after('service_provider_id');
+            $table->tinyInteger('rating')->nullable()->after('service_provider_id');
         });
     }
 

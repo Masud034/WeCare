@@ -52,7 +52,14 @@ class ServicesController extends Controller
 
 		$serviceDetails = $serviceDetails[0];
 
-		return view('service-details',compact('serviceDetails'));	   
+		// Find average rating of this service
+		$averageRating = \DB::select("SELECT AVG(rating) as rating FROM bookings WHERE service_provider_id = ? AND service_id = ?", [
+			$user_id, $service_id
+		]);
+
+		$averageRating = $averageRating[0]->rating ?? 0;
+
+		return view('service-details',compact('serviceDetails', 'averageRating'));
     }
 
 

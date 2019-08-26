@@ -11,9 +11,12 @@ class BookingController extends Controller
 		$asAcustomerBookings = \DB::select("
 			SELECT 
 				b.booking_id, 
-			    b.number_of_days, 
+			    b.number_of_days,
+			    b.from_date,
+			    b.to_date, 
 			    b.amount,
 			    b.status,
+			    b.rating,
 			    concat(u.first_name, ' ', u.last_name) as name,
 			    u.phone_number,
 			    u.address,
@@ -28,9 +31,12 @@ class BookingController extends Controller
 		$asAProviderBookings = \DB::select("
 			SELECT 
 				b.booking_id, 
-			    b.number_of_days, 
+			    b.number_of_days,
+			    b.from_date,
+			    b.to_date, 
 			    b.amount,
 			    b.status,
+			    b.rating,
 			    concat(u.first_name, ' ', u.last_name) as name,
 			    u.phone_number,
 			    u.address,
@@ -52,7 +58,13 @@ class BookingController extends Controller
 
     	$service_charge = $service_charge[0]->payment;
 
-    	$total_service_charge = $service_charge * $request->number_of_days;
+    	// Calucate number of days between two dates
+    	$from_date = new \DateTime( $request->from_date );
+		$to_date = new \DateTime( $request->to_date );
+		$no_of_days = $to_date->diff($from_date)->format("%a") + 1;
+
+		// Calucate service charge times number of days to calculate total payable amount
+    	$total_service_charge = $service_charge * $no_of_days;
 
     	// Save Data Into Booking Table and Get The Booking ID
     	$booking_id = strtoupper( str_random(8) );
@@ -60,6 +72,8 @@ class BookingController extends Controller
     	\DB::insert("
     		INSERT INTO bookings (
     			booking_id, 
+    			from_date,
+    			to_date,
     			number_of_days,
     			amount,
     			user_id, 
@@ -68,10 +82,12 @@ class BookingController extends Controller
     			status,
     			created_at,
     			updated_at
-    		) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    		) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     		", [
     			$booking_id,
-    			$request->number_of_days,
+    			$request->from_date,
+    			$request->to_date,
+    			$no_of_days,
     			$total_service_charge,
     			auth()->user()->id,
     			$request->service_id,
@@ -192,6 +208,17 @@ class BookingController extends Controller
     			->with('alert-title', 'Failed!')
     			->with('alert-message', 'Payment Failed.');	
     	}
+    }
+
+    public function rate($booking_id, $rating)
+    {
+    	\DB::update("UPDATE bookings SET rating = ? WHERE booking_id = ? AND user_id = ?", [
+    		$rating, 
+    		$booking_id, 
+    		auth()->user()->id
+    	]);
+
+    	return redirect()->back();
     }
 
 }

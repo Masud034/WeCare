@@ -13,8 +13,18 @@
 							<td>{{ $serviceDetails->title }}</td>
 						</tr>
 						<tr>
-							<th>Rate</th>
+							<th>Service Charge</th>
 							<td>BDT {{ $serviceDetails->payment }} / Day</td>
+						</tr>
+						<tr>
+							<th>Rating</th>
+							<td>
+								<i class="fa fa-star" data-value="1" style="color: {{ ($averageRating >= 1) ? '#ffc107' : '#000000'}}"></i>
+			                    <i class="fa fa-star" data-value="2" style="color: {{ ($averageRating >= 2) ? '#ffc107' : '#000000'}}"></i>
+			                    <i class="fa fa-star" data-value="3" style="color: {{ ($averageRating >= 3) ? '#ffc107' : '#000000'}}"></i>
+			                    <i class="fa fa-star" data-value="4" style="color: {{ ($averageRating >= 4) ? '#ffc107' : '#000000'}}"></i>
+			                    <i class="fa fa-star" data-value="5" style="color: {{ ($averageRating >= 5) ? '#ffc107' : '#000000'}}"></i>
+							</td>
 						</tr>
 						<tr>
 							<td colspan="2">
@@ -31,10 +41,16 @@
 
 								  <input type="hidden" name="user_id" value="{{ $serviceDetails->user_id }}">
 
-								  <div class="form-group mx-sm-3 mb-2">
-								    <label>Number of Days: </label>
-								    <input type="number" name="number_of_days" min="1" value="1">
+								  <div class="form-group mb-2">
+								    <label>From Date</label>
+								    <input type="date" name="from_date" class="form-control" required="required">
 								  </div>
+
+								  <div class="form-group mb-2">
+								    <label>To Date</label>
+								    <input type="date" name="to_date" class="form-control" required="required">
+								  </div>
+
 								  <button type="submit" class="btn btn-primary mb-2">Confirm Booking</button>
 								</form>
 							</td>

@@ -15,11 +15,11 @@
     <!-- Icon Font -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-      <!-- Testimonials -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
-      
-      <link rel="stylesheet" type="text/css" href="{{ asset('css/theme.css') }}">
+    <!-- Testimonials -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+    
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/theme.css') }}">
 
     <title>We Care</title>
   </head>
@@ -54,5 +54,6 @@
             autoplaySpeed: 4000,
         })
     </script>
+    @yield('customJS')
   </body>
 </html>
