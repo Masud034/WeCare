@@ -15,7 +15,7 @@ class ServicesController extends Controller
 		}
 
 		$serviceProviders=\DB::select("
-			SELECT u.first_name,s.title,su.offerings,su.photo, su.user_id, su.service_id
+			SELECT u.first_name,s.title,su.offerings,su.photo, su.user_id, su.service_id, su.payment
 			from users as u 
 			join service_user as su on su.user_id=u.id
 			join services as s on s.id=su.service_id {$where}"
@@ -23,7 +23,7 @@ class ServicesController extends Controller
 
 		// dd($serviceProviders);
 
-		return view('services',compact('serviceProviders'));
+		return view('services', compact('serviceProviders'));
 	}
 
 	public function details($user_id, $service_id)
@@ -45,7 +45,7 @@ class ServicesController extends Controller
 			join service_user as su on su.user_id=u.id
 			join services as s on s.id=su.service_id 
 			where su.user_id = ? and su.service_id = ? LIMIT 1", [
-				$user_id, 
+				$user_id,
 				$service_id
 			]
 		);

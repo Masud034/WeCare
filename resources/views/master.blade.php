@@ -14,11 +14,11 @@
 
     <!-- Icon Font -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- Testimonials -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
-    
     <link rel="stylesheet" type="text/css" href="{{ asset('css/theme.css') }}">
 
     <title>We Care</title>
@@ -27,9 +27,12 @@
     @include('partials.nav')
 
     <div style="margin-top: 76px;">
-      @include('partials.alert')      
-
-      @yield('content')
+      @include('partials.alert')
+        @if( auth()->check() )
+            @yield('content')
+        @else
+            @yield('content')
+        @endif
     </div>
 
     @include('partials.footer')
@@ -43,7 +46,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
     <script>
         $('.carousel').carousel({
-            interval: 5000,
+            interval: 3000,
             pause: 'hover'
         })
         $('.slider').slick({
@@ -51,8 +54,19 @@
             slideToShow: 1,
             slideToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 4000,
+            autoplaySpeed: 2000,
         })
+
+        $(".toggle-password").click(function() {
+
+            $(this).toggleClass("fa-eye-slash fa-eye");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
     </script>
     @yield('customJS')
   </body>

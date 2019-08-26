@@ -32,7 +32,7 @@ class LoginController extends Controller
         //     } else {
         //         return redirect()->back()
         //             ->with('alert-title', 'Failed!')
-        //             ->with('alert-message', 'Sorry! your credentials does not match.');    
+        //             ->with('alert-message', 'Sorry! your credentials does not match.');
         //     }
 
         // } else {
@@ -44,7 +44,7 @@ class LoginController extends Controller
         # check login - laravel way
         if ( \Auth::attempt( $request->only('email', 'password') ) ) {
 
-            return redirect('/')
+            return redirect('/profile')
                             ->with('alert-title', 'Welcome back!')
                             ->with('alert-message', 'Your login is successful. Explore now.');
 
@@ -52,8 +52,8 @@ class LoginController extends Controller
 
             return redirect()->back()
                     ->with('alert-title', 'Failed!')
-                    ->with('alert-message', 'Sorry! your credentials does not match.');   
-                    
+                    ->with('alert-message', 'Sorry! your credentials does not match.');
+
         }
 
     }

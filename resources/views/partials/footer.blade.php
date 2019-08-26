@@ -64,7 +64,6 @@
                 <ul class="social-pet mt-4">
                     <li><a href="#" title="facebook"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="#" title="twitter"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#" title="google-plus"><i class="fab fa-google-plus-g"></i></a></li>
                     <li><a href="#" title="instagram"><i class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
