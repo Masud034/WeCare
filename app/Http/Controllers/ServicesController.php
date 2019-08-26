@@ -27,20 +27,20 @@ class ServicesController extends Controller
 	}
 
 	public function details($user_id, $service_id)
-    {
+	{
 		$serviceDetails=\DB::select("
 			SELECT 
-				concat(u.first_name,' ',u.last_name) as name,
-				u.phone_number,
-				u.address,
-				u.email,
-				u.photo as user_photo,
-				s.title,
-				su.offerings,
-				su.payment,
-				su.photo as service_photo,
-				su.user_id, 
-				su.service_id
+			concat(u.first_name,' ',u.last_name) as name,
+			u.phone_number,
+			u.address,
+			u.email,
+			u.photo as user_photo,
+			s.title,
+			su.offerings,
+			su.payment,
+			su.photo as service_photo,
+			su.user_id, 
+			su.service_id
 			from users as u 
 			join service_user as su on su.user_id=u.id
 			join services as s on s.id=su.service_id 
@@ -60,7 +60,7 @@ class ServicesController extends Controller
 		$averageRating = $averageRating[0]->rating ?? 0;
 
 		return view('service-details',compact('serviceDetails', 'averageRating'));
-    }
+	}
 
 
 

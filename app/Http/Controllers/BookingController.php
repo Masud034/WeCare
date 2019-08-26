@@ -58,7 +58,6 @@ class BookingController extends Controller
 
         $service_charge = $service_charge[0]->payment;
 
-<<<<<<< HEAD
     	// Calucate number of days between two dates
     	$from_date = new \DateTime( $request->from_date );
 		$to_date = new \DateTime( $request->to_date );
@@ -66,9 +65,6 @@ class BookingController extends Controller
 
 		// Calucate service charge times number of days to calculate total payable amount
     	$total_service_charge = $service_charge * $no_of_days;
-=======
-        $total_service_charge = $service_charge * $request->number_of_days;
->>>>>>> 207818b8d458746064b16af1ce8b09135e3f9e38
 
         // Save Data Into Booking Table and Get The Booking ID
         $booking_id = strtoupper( str_random(8) );
@@ -88,7 +84,6 @@ class BookingController extends Controller
     			updated_at
     		) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     		", [
-<<<<<<< HEAD
     			$booking_id,
     			$request->from_date,
     			$request->to_date,
@@ -195,112 +190,7 @@ class BookingController extends Controller
 		} else {
 			echo "JSON Data parsing error!";
 		}
-=======
-            $booking_id,
-            $request->number_of_days,
-            $total_service_charge,
-            auth()->user()->id,
-            $request->service_id,
-            $request->user_id,
-            'Booked',
-            now(),
-            now()
-        ]);
 
-        // Call SSL Commerz API For Payment Token
-        /* PHP */
-        $post_data = array();
-        $post_data['store_id'] = "adsfa5d5a2eec83882";
-        $post_data['store_passwd'] = "adsfa5d5a2eec83882@ssl";
-        $post_data['total_amount'] = $total_service_charge;
-        $post_data['currency'] = "BDT";
-        $post_data['tran_id'] = $booking_id;
-        $post_data['success_url'] = url('payment-gateway-resposne');
-        $post_data['fail_url'] = url('payment-gateway-resposne');
-        $post_data['cancel_url'] = url('payment-gateway-resposne');
-        # $post_data['multi_card_name'] = "mastercard,visacard,amexcard";  # DISABLE TO DISPLAY ALL AVAILABLE
-
-        # EMI INFO
-        // $post_data['emi_option'] = "1";
-        // $post_data['emi_max_inst_option'] = "9";
-        // $post_data['emi_selected_inst'] = "9";
-
-        # CUSTOMER INFORMATION
-        $post_data['cus_name'] = auth()->user()->name;
-        $post_data['cus_email'] = auth()->user()->email;
-        $post_data['cus_add1'] = "Dhaka";
-        $post_data['cus_add2'] = "Dhaka";
-        $post_data['cus_city'] = "Dhaka";
-        $post_data['cus_state'] = "Dhaka";
-        $post_data['cus_postcode'] = "1000";
-        $post_data['cus_country'] = "Bangladesh";
-        $post_data['cus_phone'] = auth()->user()->phone_number;
-        $post_data['cus_fax'] = auth()->user()->phone_number;
-
-        # SHIPMENT INFORMATION
-        // $post_data['ship_name'] = "Store Test";
-        // $post_data['ship_add1 '] = "Dhaka";
-        // $post_data['ship_add2'] = "Dhaka";
-        // $post_data['ship_city'] = "Dhaka";
-        // $post_data['ship_state'] = "Dhaka";
-        // $post_data['ship_postcode'] = "1000";
-        // $post_data['ship_country'] = "Bangladesh";
-
-        # OPTIONAL PARAMETERS
-        // $post_data['value_a'] = $initiation->initiation_string;
-        // $post_data['value_b '] = $request->input('qty_c');
-        // $post_data['value_c'] = $request->input('mobile_number');
-        // $post_data['value_d'] = $request->input('uniqueid');
-
-        # CART PARAMETERS
-        $post_data['cart'] = json_encode(array(
-            array("product"=>"We Care Service" ,"amount"=> $total_service_charge)
-        ));
-        $post_data['product_amount'] = $total_service_charge;
-        // $post_data['vat'] = "5";
-        // $post_data['discount_amount'] = "5";
-        // $post_data['convenience_fee'] = "3";
-
-        # REQUEST SEND TO SSLCOMMERZ
-
-        $direct_api_url = "https://sandbox.sslcommerz.com/gwprocess/v3/api.php";
-
-        $handle = curl_init();
-        curl_setopt($handle, CURLOPT_URL, $direct_api_url );
-        curl_setopt($handle, CURLOPT_TIMEOUT, 30);
-        curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, 30);
-        curl_setopt($handle, CURLOPT_POST, 1 );
-        curl_setopt($handle, CURLOPT_POSTFIELDS, $post_data);
-        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, FALSE); # KEEP IT FALSE IF YOU RUN FROM LOCAL PC
-
-
-        $content = curl_exec($handle );
-
-        $code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-
-        if($code == 200 && !( curl_errno($handle))) {
-            curl_close( $handle);
-            $sslcommerzResponse = $content;
-        } else {
-            curl_close( $handle);
-            echo "FAILED TO CONNECT WITH SSLCOMMERZ API";
-            exit;
-        }
-
-        # PARSE THE JSON RESPONSE
-        $sslcz = json_decode($sslcommerzResponse, true );
-
-        if(isset($sslcz['GatewayPageURL']) && $sslcz['GatewayPageURL']!="" ) {
-            # THERE ARE MANY WAYS TO REDIRECT - Javascript, Meta Tag or Php Header Redirect or Other
-            # echo "<script>window.location.href = '". $sslcz['GatewayPageURL'] ."';</script>";
-            echo "<meta http-equiv='refresh' content='0;url=".$sslcz['GatewayPageURL']."'>";
-            # header("Location: ". $sslcz['GatewayPageURL']);
-            exit;
-        } else {
-            echo "JSON Data parsing error!";
-        }
->>>>>>> 207818b8d458746064b16af1ce8b09135e3f9e38
     }
 
     public function paymentGatewayResponse(Request $request)
