@@ -22,13 +22,24 @@
                             <div class="card">
                                 <img src="{{ asset(Storage::url($sp->photo)) }}" class="card-img-top" onerror="this.src='https://placehold.it/200x200'" style="height: 200px;" alt="Photo" class="img-thumbnail">
                                 <div class="card-body">
-                                    <h5 class="card-title">Provider: {{ $sp->first_name }}</h5>
-                                    <p class="card-text">{{ $sp->offerings }}</p>
-                                    <p class="card-text">
-                                        <small class="text-muted"><em>Category:</em></small>
-                                        <small class="text-success">{{ $sp->title }}</small>
-                                        <a class="btn btn-primary btn-sm float-right" href="{{ url('service-details', [$sp->user_id, $sp->service_id]) }}">View Details</a>
-                                    </p>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <h5 class="card-title"><span class="greenify">Provider :  </span>{{ $sp->first_name }}</h5>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <p class="card-text">{{ $sp->offerings }}</p>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <p class="card-text"><strong class="greenify">Rate :</strong> <span class="float-right">{{ $sp->payment }} BDT / Day</span></p>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <p class="card-text">
+                                                <small class="text-muted"><em>Category:</em></small>
+                                                <small class="text-success">{{ $sp->title }}</small>
+                                                <a class="btn btn-primary btn-sm float-right" href="{{ url('service-details', [$sp->user_id, $sp->service_id]) }}">View Details</a>
+                                            </p>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

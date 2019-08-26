@@ -1,10 +1,13 @@
 @extends('master')
 @section('content')
+    <link rel="stylesheet" href="{{ asset('css/themeapp.css') }}">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Service Details</div>
+                    <div class="card-header shadow p-3 bgc-dark rounded text-white">
+                        <h1 class="form-title text-center mx-5">Service Details</h1>
+                    </div>
                     <img src="{{ asset(Storage::url($serviceDetails->service_photo)) }}" class="card-img-top" onerror="this.src='https://placehold.it/200x200'" alt="Photo" class="img-responsive">
                     <div class="card-body">
                         <table class="table">
@@ -45,7 +48,9 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">Provider Details</div>
+                    <div class="card-header shadow p-3 bgc-dark rounded text-white">
+                        <h1 class="form-title text-center mx-5" style="font-size: 120%">Provider Details</h1>
+                    </div>
                     <img src="{{ asset(Storage::url($serviceDetails->user_photo)) }}" class="card-img-top" onerror="this.src='https://placehold.it/200x200'" alt="Photo" class="img-responsive">
                     <div class="card-body">
                         <table class="table">

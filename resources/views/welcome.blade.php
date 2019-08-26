@@ -1,7 +1,6 @@
 @extends('master')
 
 @section('content')
-    @if( !(auth()->check()) )
     <section id="showcase">
         <div id="myCarousel" class="carousel slide" date-ride="carousel">
             <ol class="carousel-indicators">
@@ -50,33 +49,49 @@
         </div>
     </section>
 
-
-    <section class="py-5" id="steps">
-        <div class="container steps">
-            <div class="row">
-                <div class="col-md-3 mb-4 text-center">
-                    <i class="fas fa-user-plus fa-4x mb-2"></i>
-                    <h3>Register</h3>
-                    <p>Register today and provide care to other registered user or look for a care now.</p>
+    <section class="text-center" id="steps">
+        <div class="container-fluid steps">
+            <div class="row align-items-center">
+                <div class="col-sm-12 col-lg-6 col-xl-3">
+                    <div class="card shadow p-3 mb-5 bg-white rounded">
+                        <i class="fas fa-user-plus fa-4x mb-2 mt-5"></i>
+                        <h3>Register</h3>
+                        <div class="card-body">
+                            <p>Register today and provide care to other registered user or look for a care now.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 mb-4 text-center">
-                    <i class="fas fa-search-plus fa-4x mb-2"></i>
-                    <h3>Search Care</h3>
-                    <p>Search available service that other user provide and find the care you're looking for.</p>
+                <div class="col-sm-12 col-lg-6 col-xl-3">
+                    <div class="card shadow p-3 mb-5 bg-white rounded">
+                        <i class="fas fa-search-plus fa-4x mb-2 mt-5"></i>
+                        <h3>Search Care</h3>
+                        <div class="card-body">
+                            <p>Search available service that other user provide and find the care you're looking for.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 mb-4 text-center">
-                    <i class="fas fa-hand-holding-usd fa-4x mb-2"></i>
-                    <h3>Provide care</h3>
-                    <p>Find a care that you are capable to provide to the other registered users.</p>
+                <div class="col-sm-12 col-lg-6 col-xl-3">
+                    <div class="card shadow p-3 mb-5 bg-white rounded">
+                        <i class="fas fa-hand-holding-usd fa-4x mb-2 mt-5"></i>
+                        <h3>Provide care</h3>
+                        <div class="card-body">
+                            <p>Find a care that you are capable to provide to the other registered users.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 mb-4 text-center">
-                    <i class="fas fa-money-check-alt fa-4x mb-2"></i>
-                    <h3>Earn Money</h3>
-                    <p>You can eary handy money by providing care regardless of age, profession or experience.</p>
+                <div class="col-sm-12 col-lg-6 col-xl-3">
+                    <div class="card shadow p-3 mb-5 bg-white rounded">
+                        <i class="fas fa-money-check-alt fa-4x mb-2 mt-5"></i>
+                        <h3>Earn Money</h3>
+                        <div class="card-body">
+                            <p>You can eary handy money by providing care regardless of age, profession or experience.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <section id="testimonials" class="p-4 bg-custom-b text-white">
         <div class="container">
@@ -131,7 +146,6 @@
                                 <li class="font-weight-bold py-3 card-list-item">Foster care for a day</li>
                                 <li class="font-weight-bold py-3 card-list-item border-0">Resident contract care</li>
                             </ul>
-                            <a href="{{ url('/register') }}" class="btn p-2 text-uppercase font-weight-bold price-card-button text-light">sign-up</a>
                         </div>
                     </div>
                 </div>
@@ -143,9 +157,8 @@
                                 <li class="font-weight-bold py-3 card-list-item">Babysit care</li>
                                 <li class="font-weight-bold py-3 card-list-item">Home care for a day</li>
                                 <li class="font-weight-bold py-3 card-list-item">Foster care for a day</li>
-                                <li class="font-weight-bold py-3 card-list-item ">Resident contract care</li>
+                                <li class="font-weight-bold py-3 card-list-item border-0">Resident contract care</li>
                             </ul>
-                            <a href="{{ url('/register') }}" class="btn p-2 text-uppercase font-weight-bold price-card-button text-light">sign-up</a>
                         </div>
                     </div>
                 </div>
@@ -159,11 +172,13 @@
                                 <li class="font-weight-bold py-3 card-list-item">Foster care for a day</li>
                                 <li class="font-weight-bold py-3 card-list-item border-0">Resident contract care</li>
                             </ul>
-                            <a href="{{ url('/register') }}" class="btn p-2 text-uppercase font-weight-bold price-card-button text-light">sign-up</a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container">
+            <a href="{{ url('/register') }}" class="btn p-2 text-uppercase font-weight-bold price-card-button text-light">sign-up</a>
         </div>
     </section>
 
@@ -280,7 +295,5 @@
             </div>
         </div>
     </section>
-    @else
-    @endif
 
 @endsection

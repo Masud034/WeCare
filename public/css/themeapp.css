@@ -1,6 +1,9 @@
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #eee;
+    font-family: inherit;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../img/dhaka.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     overflow-x: hidden;
 }
 
@@ -127,8 +130,8 @@ body {
     margin-top: 2px;
 }
 .marginfix {
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 120px;
     margin-left: 120px;
     margin-right: 120px;
 }
@@ -164,6 +167,11 @@ body {
     transition: all .2s;
     vertical-align: top;
     box-orient: vertical;
+}
+
+.manp-10 {
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 
